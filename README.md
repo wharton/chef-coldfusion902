@@ -47,20 +47,20 @@ To set ColdFusion admin settings via this cookbook set the config_settings as ne
 and include the coldfusion902::configure recipe in your run list. Below is a sample
 JSON datasource definition:
 
-  "config_settings" => {
-    "datasource" => {
-      "MSSql" => [
-        {
-          "name" => "MYDSN",
-          "host" => "mydbserver",
-          "database" => "mydb",
-          "username" => "dbuser",
-          "password" => "dbpassword",
-          "sendStringParametersAsUnicode" => true,
-          "disable_clob" => false,
-          "disable_blob" => false,
-        }
-      ]
+    "config_settings" => {
+      "datasource" => {
+        "MSSql" => [
+          {
+            "name" => "MYDSN",
+            "host" => "mydbserver",
+            "database" => "mydb",
+            "username" => "dbuser",
+            "password" => "dbpassword",
+            "sendStringParametersAsUnicode" => true,
+            "disable_clob" => false,
+            "disable_blob" => false,
+          }
+        ]
+      }
     }
-  }
   
