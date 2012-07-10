@@ -6,7 +6,8 @@ Sets up ColdFusion 9.0.2. Currently supports standalone server on 32bit Linux.
 REQUIREMENTS
 ============
 
-The apache2 cookbook is required if using the colfusion902::apache recipe.
+* apt - The apt cookbook is required.
+* apache2 - The apache2 cookbook is required if using the colfusion902::apache recipe.
 
 ATTRIBUTES
 ==========
