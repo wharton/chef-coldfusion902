@@ -8,9 +8,9 @@
   </Directory>
   <Directory <%= node['cf902']['webroot'] %>>
           Options Indexes FollowSymLinks MultiViews
-          AllowOverride None
+          AllowOverride FileInfo Options
           Order allow,deny
-          allow from all
+          Allow from all
           # This directive allows us to have apache2's default start page
           # in /apache2-default/, but still have / go to the right place
           #RedirectMatch ^/$ /apache2-default/
@@ -49,9 +49,9 @@
   </Directory>
   <Directory <%= node['cf902']['webroot'] %>>
           Options Indexes FollowSymLinks MultiViews
-          AllowOverride None
+          AllowOverride FileInfo Options
           Order allow,deny
-          allow from all
+          Allow from all
           # This directive allows us to have apache2's default start page
           # in /apache2-default/, but still have / go to the right place
           #RedirectMatch ^/$ /apache2-default/

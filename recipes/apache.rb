@@ -35,7 +35,8 @@ link "#{node['apache']['dir']}/conf.d/httpd" do
 end
 
 # Make sure CF is running
-execute "/bin/true" do
+execute "start_cf_for_coldfusion902_wsconfig" do
+  command "/bin/true"
   notifies :start, "service[coldfusion]", :immediately
 end
 
@@ -44,5 +45,5 @@ execute "wsconfig" do
   command "#{node['cf902']['install_path']}/runtime/bin/wsconfig -server coldfusion -ws Apache -dir #{node['apache']['dir']} -bin /usr/sbin/apache2 -script /usr/sbin/apache2ctl -coldfusion -v"
   action :run
   not_if "grep 'jrun_module' #{node['apache']['dir']}/httpd.conf"
-  notifies :restart, "service[apache2]", :delayed
+  notifies :restart, "service[apache2]", :immediately
 end

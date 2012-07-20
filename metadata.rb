@@ -12,6 +12,7 @@ recipe "coldfusion9", "Includes the standalone recipe"
 recipe "coldfusion9::apache", "Configures ColdFusion to run behind the Apache httpd web server"
 recipe "coldfusion9::configure", "Sets ColdFusion configuration settings via the config LWRP"
 recipe "coldfusion9::jvmconfig", "Sets necessary JVM configuration, included by default recipe"
+recipe "coldfusion9::jvmconfig", "Sets webroot for the built in JRun web server (JWS)"
 recipe "coldfusion9::standalone", "Installs ColdFusion 9.0.1 in standalone mode, included by default recipe"
 recipe "coldfusion9::trustedcerts", "Imports configured certificates into the JVM truststore"
 

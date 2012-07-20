@@ -17,7 +17,7 @@ java.home=<%=node['cf902']['java_home']%>
 #
 
 # Arguments to VM
-java.args=-server -Xms1024m -Xmx1024m -Dsun.io.useCanonCaches=false -XX:MaxPermSize=192m -XX:+UseParallelGC -Djava.awt.headless=true -Dcoldfusion.rootDir={application.home}/../ -Djava.security.policy={application.home}/../lib/coldfusion.policy -Djava.security.auth.policy={application.home}/../lib/neo_jaas.policy  -Dcoldfusion.classPath={application.home}/../lib/updates,{application.home}/../lib,{application.home}/../gateway/lib/,{application.home}/../wwwroot/WEB-INF/cfform/jars,{application.home}/../wwwroot/WEB-INF/flex/jars -Dcoldfusion.libPath={application.home}/../lib 
+java.args=-server -Xmx512m -Dsun.io.useCanonCaches=false -XX:MaxPermSize=192m -XX:+UseParallelGC -Djava.awt.headless=true -Dcoldfusion.rootDir={application.home}/../ -Djava.security.policy={application.home}/../lib/coldfusion.policy -Djava.security.auth.policy={application.home}/../lib/neo_jaas.policy  -Dcoldfusion.classPath={application.home}/../lib/updates,{application.home}/../lib,{application.home}/../gateway/lib/,{application.home}/../wwwroot/WEB-INF/cfform/jars,{application.home}/../wwwroot/WEB-INF/flex/jars -Dcoldfusion.libPath={application.home}/../lib
 
 #
 # commas will be converted to platform specific separator and the result will be passed

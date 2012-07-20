@@ -18,7 +18,8 @@
 #
 
 # Make sure CF is running
-execute "/bin/true" do
+execute "start_cf_for_coldfusion902_configure" do
+  command "/bin/true"
   notifies :start, "service[coldfusion]", :immediately
 end
 
