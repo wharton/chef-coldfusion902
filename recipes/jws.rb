@@ -18,7 +18,7 @@
 #
 
 # Set the webroot
-template "#{node['cf9']['install_path']}/wwwroot/WEB-INF/jrun-web.xml" do
+template "#{node['cf902']['install_path']}/wwwroot/WEB-INF/jrun-web.xml" do
   source "jrun-web.xml.erb"
   mode "0664"
   owner "nobody"
