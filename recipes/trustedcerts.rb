@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-if node.recipe?("java")   
+if node.recipe?("java") && node['java']['install_flavor'] == "oracle" 
   node['cf902']['java_home'] = node['java']['java_home']
 end
 
