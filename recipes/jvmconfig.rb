@@ -2,7 +2,7 @@
 # Cookbook Name:: coldfusion9
 # Recipe:: jvmconfig
 #
-# Copyright 2011, Nathan Mische
+# Copyright 2012, Nathan Mische
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

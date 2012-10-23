@@ -3,20 +3,21 @@ maintainer_email "goettnel@wharton.upenn.edu"
 license          "Apache 2.0"
 description      "Installs/Configures ColdFusion 9.0.2"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.0.3"
+version          "0.0.4"
 
-supports 'ubuntu', '= 10.04'
-supports 'ubuntu', '>= 11.04'
+%w{ ubuntu }.each do |os|
+  supports os
+end
 
 depends "apt"
 depends "apache2"
 
-recipe "coldfusion9", "Includes the standalone recipe"
-recipe "coldfusion9::apache", "Configures ColdFusion to run behind the Apache httpd web server"
-recipe "coldfusion9::configure", "Sets ColdFusion configuration settings via the config LWRP"
-recipe "coldfusion9::jvmconfig", "Sets necessary JVM configuration, included by default recipe"
-recipe "coldfusion9::jws", "Sets webroot for the built in JRun web server (JWS)"
-recipe "coldfusion9::standalone", "Installs ColdFusion 9.0.1 in standalone mode, included by default recipe"
-recipe "coldfusion9::trustedcerts", "Imports configured certificates into the JVM truststore"
+recipe "coldfusion902", "Includes the standalone and jvmconfig recipes"
+recipe "coldfusion902::apache", "Configures ColdFusion to run behind the Apache httpd web server"
+recipe "coldfusion902::configure", "Sets ColdFusion configuration settings via the config LWRP"
+recipe "coldfusion902::jvmconfig", "Sets necessary JVM configuration"
+recipe "coldfusion902::jws", "Sets webroot for the built in JRun web server (JWS)"
+recipe "coldfusion902::standalone", "Installs ColdFusion 9.0.1 in standalone mode, included by default recipe"
+recipe "coldfusion902::trustedcerts", "Imports certificates from a data bag into the JVM truststore"
 
 

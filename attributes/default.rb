@@ -6,8 +6,6 @@ default['cf902']['admin_pw'] = "vagrant"
 default['cf902']['webroot'] = "/vagrant/wwwroot"
 # JVM
 default['cf902']['java_home'] = "#{node['cf902']['install_path']}/runtime" 
-# Trusted Certificates
-default['cf902']['trusted_certs'] = {}
 # Configuration 
 default['cf902']['config_settings'] = {}
 # Download Locations

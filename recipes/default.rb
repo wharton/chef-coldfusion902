@@ -2,7 +2,7 @@
 # Cookbook Name:: coldfuison9
 # Recipe:: default
 #
-# Copyright 2011, Lew Goettner, Nathan Mische
+# Copyright 2012, Lew Goettner, Nathan Mische
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,20 +17,23 @@
 # limitations under the License.
 #
 
-
 # If Ubuntu 10.04 add the lucid-backports repo
-apt_repository "lucid-backports" do
-  uri "http://us.archive.ubuntu.com/ubuntu/"
-  distribution "lucid-backports"
-  components ["main","universe"]
-  deb_src true
-  action :add
-  only_if { node[:platform_version] == "10.04" }
-end
+if node['platform'] == 'ubuntu'
 
-execute "apt-get update" do
-	action :run
-	only_if { node[:platform_version] == "10.04" }
+  apt_repository "lucid-backports" do
+    uri "http://us.archive.ubuntu.com/ubuntu/"
+    distribution "lucid-backports"
+    components ["main","universe"]
+    deb_src true
+    action :add
+    only_if { node[:platform_version] == "10.04" }
+  end
+
+  execute "apt-get update" do
+  	action :run
+  	only_if { node[:platform_version] == "10.04" }
+  end
+
 end
 
 # Install libstdc++5
