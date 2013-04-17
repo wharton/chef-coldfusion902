@@ -17,49 +17,8 @@
 # limitations under the License.
 #
 
-# Create the CF 9.0.2 properties file
-template "#{Chef::Config['file_cache_path']}/cf902-installer.properties" do
-  source "cf902-installer.properties.erb"
-  mode "0644"
-  owner "root"
-  group "root"
-  not_if { File.exists?("#{node['cf902']['install_path']}/Adobe_ColdFusion_9_InstallLog.log") }
-end
-
-
-if node['cf902']['standalone'] && node['cf902']['standalone']['cf902_installer']
-
-  # Download CF 9.0.2
-  remote_file "#{Chef::Config['file_cache_path']}/ColdFusion_9_WWEJ_linux.bin" do
-    source "#{node['cf902']['standalone']['cf902_installer']['url']}"
-    action :create_if_missing
-    mode "0744"
-    owner "root"
-    group "root"
-    not_if { File.exists?("#{node['cf902']['install_path']}/Adobe_ColdFusion_9_InstallLog.log") }
-  end
-
-else
-
-  # Move the CF 9.0.2 installer
-  cookbook_file "#{Chef::Config['file_cache_path']}/ColdFusion_9_WWEJ_linux.bin" do
-    source "ColdFusion_9_WWEJ_linux.bin"
-    mode "0744"
-    owner "root"
-    group "root"
-    not_if { File.exists?("#{node['cf902']['install_path']}/Adobe_ColdFusion_9_InstallLog.log") }
-  end
-
-end
-
-# Run the CF 9.0.2 installer
-execute "run_cf902_installer" do
-  command "#{Chef::Config['file_cache_path']}/ColdFusion_9_WWEJ_linux.bin -f #{Chef::Config['file_cache_path']}/cf902-installer.properties"
-  creates "#{node['cf902']['install_path']}/Adobe_ColdFusion_9_InstallLog.log"
-  action :run
-  user "root"
-  cwd "#{Chef::Config['file_cache_path']}"
-end
+# Run the installer
+include_recipe "coldfusion902::install"
 
 # Link the init script
 link "/etc/init.d/coldfusion" do

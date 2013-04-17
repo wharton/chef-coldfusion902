@@ -30,8 +30,7 @@ def initialize(*args)
   p.run_action(:install)
   
   # Download the config manager app
-  rf = remote_file "#{Chef::Config['file_cache_path']}/configmanager.zip" do
-    source "#{node['cf902']['configmanager']['source']['url']}"
+  cf = cookbook_file "#{Chef::Config['file_cache_path']}/configmanager.zip" do
     action :nothing
     mode "0744"
     owner "root"
@@ -39,7 +38,7 @@ def initialize(*args)
     not_if { ::File.exists?("#{node['cf902']['install_path']}/wwwroot/CFIDE/administrator/configmanager") }
   end
 
-  rf.run_action(:create_if_missing)
+  cf.run_action(:create_if_missing)
 
   # Install the application
   e = execute "unzip #{Chef::Config['file_cache_path']}/configmanager.zip -d #{node['cf902']['install_path']}/wwwroot/CFIDE/administrator/configmanager" do

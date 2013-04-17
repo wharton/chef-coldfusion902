@@ -12,5 +12,5 @@ http://www.adobe.com/support/coldfusion/downloads_updates.html#cf9.
 
 * ColdFusion_9_WWEJ_linux.bin
 
-To use this cookbook file comment out the related 
-`default['cf902']['standalone']` default attribute(s).
+To use this cookbook file set the  
+`node['cf902']['installer']['cookbook_file']` attribute instead of the other `node['cf902']['installer']` attributes.

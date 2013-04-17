@@ -1,7 +1,7 @@
 Description
 ===========
 
-Sets up ColdFusion 9.0.2. Currently supports standalone server on 32bit Linux.
+Sets up ColdFusion 9.0.2. Currently supports standalone server on 32bit Ubuntu Linux.
 
 Requirements
 ============
@@ -14,6 +14,15 @@ Cookbooks
 
 Attributes
 ==========
+
+For Installer Location
+----------------------
+
+_One_ of the following attributes should be set:
+
+* `node['cf902']['installer']['url']` -  If defined, the installer will be downloaded from this location. (default: "http://download.macromedia.com/pub/coldfusion/cf9_installer/ColdFusion\_9\_WWEJ\_linux.bin")
+* `node['cf902']['installer']['cookbook_file']` - If defined, a cookbook file with this name, i.e. "ColdFusion\_10\_WWEJ\_linux32.bin", must be available in this cookbook's `files/default` directory. You must download the installer from adobe.com and place it in this directory. (no default)
+* `node['cf902']['installer']['local_file']` - If defined, the the installer binary must be available on the the chef node at this path, i.e. "/tmp/ColdFusion\_10\_WWEJ\_linux32.bin". This can be useful if you have some way to distribute the installer to chef nodes before provisioning. For example you may keep a single copy of the installer on your Vagrant host workstation and make it availble to all you Vagrant guests via a shared folder. (no default)
 
 For ColdFusion
 --------------
@@ -51,11 +60,13 @@ JSON datasource definition:
       }
     }
 
-For Downlaods
+For Updates
 -------------
 
-* `node['cf902']['standalone']['cf902_installer']['url']` - URL for ColdFusion 9.0.2 installer (default: "http://download.macromedia.com/pub/coldfusion/cf9_installer/ColdFusion_9_WWEJ_linux.bin")
-* `node['cf902']['configmanager']['source']['url']` - Source for cf-configmanger (default: "https://github.com/downloads/nmische/cf-configmanager/configmanager.zip")
+* `node['cf902']['CHF1']['CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/chf/CF902/CF902.zip")
+* `node['cf902']['CHF1']['CFIDE-CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/chf/CF902/CFIDE-902.zip")
+* `node['cf902']['APSB13-10']['CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-10/partial/CF902.zip")
+* `node['cf902']['APSB13-10']['CFIDE-CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-10/partial/CFIDE-902.zip")
   
 Usage
 =====
@@ -64,7 +75,7 @@ On server nodes:
 
     include_recipe "coldfusion902"
 
-This will run the `coldfusion902::standalone` and `coldfusion902::jvmconfig` recipes, 
+This will run the `coldfusion902::standalone` , `coldfusion902::jvmconfig` and `coldfusion902::updates` recipes, 
 installing ColdFusion 9.0.2 developer edition in standalone server mode.
 
 For Trusted Certificates

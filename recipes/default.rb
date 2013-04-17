@@ -48,3 +48,4 @@ end
 
 include_recipe "coldfusion902::standalone"
 include_recipe "coldfusion902::jvmconfig"
+include_recipe "coldfusion902::updates"
