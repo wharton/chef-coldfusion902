@@ -29,7 +29,7 @@ web_app "coldfusion" do
 end
 
 # Link httpd.conf
-link "#{node['apache']['dir']}/conf.d/httpd" do
+link "#{node['apache']['dir']}/conf.d/coldfusion-httpd.conf" do
   to "#{node['apache']['dir']}/httpd.conf"
   notifies :restart, "service[apache2]", :delayed
 end
@@ -42,8 +42,8 @@ end
 
 # Run wsconfig
 execute "wsconfig" do
-  command "#{node['cf902']['install_path']}/runtime/bin/wsconfig -server coldfusion -ws Apache -dir #{node['apache']['dir']} -bin /usr/sbin/apache2 -script /usr/sbin/apache2ctl -coldfusion -v"
+  command "#{node['cf902']['install_path']}/runtime/bin/wsconfig -server coldfusion -ws Apache -dir #{node['apache']['dir']} -bin #{node['apache']['binary']} -script /usr/sbin/apache2ctl -coldfusion -v"
   action :run
   not_if "grep 'jrun_module' #{node['apache']['dir']}/httpd.conf"
-  notifies :restart, "service[apache2]", :immediately
+  notifies :restart, "service[apache2]", :delayed
 end

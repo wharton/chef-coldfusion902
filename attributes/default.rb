@@ -16,5 +16,6 @@ default['cf902']['config_settings'] = {}
 # Download Locations
 default['cf902']['CHF1']['CF902']['url'] = "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/chf/CF902/CF902.zip"
 default['cf902']['CHF1']['CFIDE-CF902']['url'] = "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/chf/CF902/CFIDE-902.zip"
-default['cf902']['APSB13-10']['CF902']['url'] = "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-10/partial/CF902.zip"
-default['cf902']['APSB13-10']['CFIDE-CF902']['url'] = "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-10/partial/CFIDE-902.zip"
+default['cf902']['APSB13-13']['CF902']['url'] = "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-13/partial/CF902.zip"
+default['cf902']['APSB13-13']['CFIDE-CF902']['url'] = "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-13/partial/CFIDE-902.zip"
+default['cf902']['APSB13-19']['jar']['url'] = "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-19/3329722.zip"

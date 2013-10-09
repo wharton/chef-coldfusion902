@@ -19,7 +19,10 @@
 
 
 if node.recipe?("java") && node['java']['install_flavor'] == "oracle" 
-  node['cf902']['java_home'] = node['java']['java_home']
+  node.set['cf902']['java_home'] = node['java']['java_home']
+end
+unless node['cf902']['java_home']
+  node.set['cf902']['java_home'] = "#{node['cf902']['install_path']}/runtime"
 end
   
 # Customize the jvm config

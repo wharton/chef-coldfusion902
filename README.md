@@ -65,8 +65,9 @@ For Updates
 
 * `node['cf902']['CHF1']['CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/chf/CF902/CF902.zip")
 * `node['cf902']['CHF1']['CFIDE-CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/chf/CF902/CFIDE-902.zip")
-* `node['cf902']['APSB13-10']['CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-10/partial/CF902.zip")
-* `node['cf902']['APSB13-10']['CFIDE-CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-10/partial/CFIDE-902.zip")
+* `node['cf902']['APSB13-13']['CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-13/partial/CF902.zip")
+* `node['cf902']['APSB13-13']['CFIDE-CF902']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-13/partial/CFIDE-902.zip")
+ `node['cf902']['APSB13-19']['jar']['url']` - Download location for update (default: "http://helpx.adobe.com/content/dam/help/en/coldfusion/kb/apsb13-19/3329722.zip")
   
 Usage
 =====
