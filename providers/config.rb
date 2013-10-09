@@ -32,6 +32,7 @@ def initialize(*args)
   # Download the config manager app
   cf = cookbook_file "#{Chef::Config['file_cache_path']}/configmanager.zip" do
     action :nothing
+    cookbook "coldfusion902"
     mode "0744"
     owner "root"
     group "root"
