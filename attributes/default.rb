@@ -1,5 +1,5 @@
 # Installer locations, one of these must be defined
-default['cf902']['installer']['url'] = "http://download.macromedia.com/pub/coldfusion/cf9_installer/ColdFusion_9_WWEJ_linux.bin"
+default['cf902']['installer']['url'] = "http://download.macromedia.com/pub/coldfusion/cf9_installer/ColdFusion_9_WWEJ_linux64.bin"
 # default['cf902']['installer']['cookbook_file'] = "ColdFusion_10_WWEJ_linux32.bin"
 # default['cf902']['installer']['local_file'] = "/tmp/ColdFusion_10_WWEJ_linux32.bin"
 
