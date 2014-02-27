@@ -19,7 +19,7 @@
 
 # Backwards compatibility for older url attribute
 if node['cf902']['standalone'] && node['cf902']['standalone']['cf902_installer'] && node['cf902']['standalone']['cf902_installer']['url'] 
-  node.default['cf10']['installer']['url'] = node['cf902']['standalone']['cf902_installer']['url']
+  node.default['cf902']['installer']['url'] = node['cf902']['standalone']['cf902_installer']['url']
 end
 
 # Set up install folder with correct permissions

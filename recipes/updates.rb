@@ -20,7 +20,7 @@
 # Stop CF
 execute "stop_cf_for_coldfusion902_updates" do
   command "/bin/true"
-  not_if { File.exists?("#{node['cf902']['install_path']}/lib/updates/chf9020001.jar") && File.exists?("#{node['cf902']['install_path']}/lib/updates/hf902-00004.jar") }
+  not_if { File.exists?("#{node['cf902']['install_path']}/lib/updates/chf9020001.jar") && File.exists?("#{node['cf902']['install_path']}/lib/updates/hf902-00005.jar") && File.exists?("#{node['cf902']['install_path']}/runtime/servers/lib/jrun-hotfix-3329722.jar") }
   notifies :stop, "service[coldfusion]", :immediately
 end
 
