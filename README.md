@@ -21,8 +21,8 @@ For Installer Location
 _One_ of the following attributes should be set:
 
 * `node['cf902']['installer']['url']` -  If defined, the installer will be downloaded from this location. (default: "http://download.macromedia.com/pub/coldfusion/cf9_installer/ColdFusion_9_WWEJ_linux.bin")
-* `node['cf902']['installer']['cookbook_file']` - If defined, a cookbook file with this name, e.g. `ColdFusion_10_WWEJ_linux32.bin`, must be available in this cookbook's `files/default` directory. You must download the installer from adobe.com and place it in this directory. (no default)
-* `node['cf902']['installer']['local_file']` - If defined, the the installer binary must be available on the the chef node at this path, e.g. `/tmp/ColdFusion_10_WWEJ_linux32.bin`. This can be useful if you have some way to distribute the installer to chef nodes before provisioning. For example you may keep a single copy of the installer on your Vagrant host workstation and make it availble to all you Vagrant guests via a shared folder. (no default)
+* `node['cf902']['installer']['cookbook_file']` - If defined, a cookbook file with this name, e.g. `ColdFusion_9_WWEJ_linux32.bin`, must be available in this cookbook's `files/default` directory. You must download the installer from adobe.com and place it in this directory. (no default)
+* `node['cf902']['installer']['local_file']` - If defined, the the installer binary must be available on the the chef node at this path, e.g. `/tmp/ColdFusion_9_WWEJ_linux32.bin`. This can be useful if you have some way to distribute the installer to chef nodes before provisioning. For example you may keep a single copy of the installer on your Vagrant host workstation and make it availble to all you Vagrant guests via a shared folder. (no default)
 
 For ColdFusion
 --------------
