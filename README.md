@@ -20,16 +20,16 @@ For Installer Location
 
 _One_ of the following attributes should be set:
 
-* `node['cf902']['installer']['url']` -  If defined, the installer will be downloaded from this location. (default: "http://download.macromedia.com/pub/coldfusion/cf9_installer/ColdFusion\_9\_WWEJ\_linux.bin")
-* `node['cf902']['installer']['cookbook_file']` - If defined, a cookbook file with this name, i.e. "ColdFusion\_10\_WWEJ\_linux32.bin", must be available in this cookbook's `files/default` directory. You must download the installer from adobe.com and place it in this directory. (no default)
-* `node['cf902']['installer']['local_file']` - If defined, the the installer binary must be available on the the chef node at this path, i.e. "/tmp/ColdFusion\_10\_WWEJ\_linux32.bin". This can be useful if you have some way to distribute the installer to chef nodes before provisioning. For example you may keep a single copy of the installer on your Vagrant host workstation and make it availble to all you Vagrant guests via a shared folder. (no default)
+* `node['cf902']['installer']['url']` -  If defined, the installer will be downloaded from this location. (default: "http://download.macromedia.com/pub/coldfusion/cf9_installer/ColdFusion_9_WWEJ_linux.bin")
+* `node['cf902']['installer']['cookbook_file']` - If defined, a cookbook file with this name, e.g. `ColdFusion_9_WWEJ_linux32.bin`, must be available in this cookbook's `files/default` directory. You must download the installer from adobe.com and place it in this directory. (no default)
+* `node['cf902']['installer']['local_file']` - If defined, the the installer binary must be available on the the chef node at this path, e.g. `/tmp/ColdFusion_9_WWEJ_linux32.bin`. This can be useful if you have some way to distribute the installer to chef nodes before provisioning. For example you may keep a single copy of the installer on your Vagrant host workstation and make it availble to all you Vagrant guests via a shared folder. (no default)
 
 For ColdFusion
 --------------
 
-* `node['cf902']['install_path']` - ColdFusion installation path (default: "/opt/coldfusion9")
+* `node['cf902']['install_path']` - ColdFusion installation path (default: `/opt/coldfusion9`)
 * `node['cf902']['admin_pw']` - ColdFusion administrator password (default: "vagrant")
-* `node['cf902']['webroot']` - The document root to use for either Apache or theJRun Web Server (JWS) (default: "/vagrant/wwwroot") 
+* `node['cf902']['webroot']` - The document root to use for either Apache or theJRun Web Server (JWS) (default: `/vagrant/wwwroot`)
 * `node['cf902']['java_home']` - Defaults to the JRE bundled with ColdFusion. Updated to system JAVA_HOME if the Java cookbook is used.
 
 For Configuration
@@ -40,7 +40,7 @@ For Configuration
 ColdFusion configuration for this cookbook is handled by a LWRP wrapping the 
 ColdFusion Configuration Manager project (https://github.com/nmische/cf-configmanager). 
 To set ColdFusion admin settings via this cookbook set the config_settings as necessary
-and include the coldfusion902::configure recipe in your run list. Below is a sample
+and include the `coldfusion902::configure` recipe in your run list. Below is a sample
 JSON datasource definition:
 
     "config_settings" => {
